@@ -3,7 +3,7 @@
 N = 512;
 
 % Define the number of ellipses (M)
-M = 8;
+M = 10;
 
 % Define the center positions of the ellipses (X, Y coordinates)
 center_positions = [
@@ -14,11 +14,13 @@ center_positions = [
     0.0,  -0.25;                 % Ellipse 5     (tumor)
     -0.70,  -0.15;               % Ellipse 6     (reference1)
     -0.70,  -0.35;               % Ellipse 7     (reference2)
-    0, -0.0184;                  % Ellipse 2     (brain)
+    0, -0.0184;                  % Ellipse 8     (tumor)
+    0.18, -0.0184;               % Ellipse 9     (tumor)
+    0, 0.025;               % Ellipse 10    (tumor)
 ];
 
 % Define the rotation angles of the ellipses (in degrees)
-rotation_angles = [0, 0, -5, 20, 0.2, 0, 0, 0];
+rotation_angles = [0, 0, -5, 20, 0.2, 0, 0, 0, 0, 0];
 
 % Define the sizes of the ellipses [width, height]
 sizes = [
@@ -29,11 +31,13 @@ sizes = [
     0.1, 0.1;       % Ellipse 5
     0.1, 0.1;       % Ellipse 6
     0.1, 0.1;       % Ellipse 7
-    0.04, 0.04;     % Ellipse 2 
+    0.04, 0.04;     % Ellipse 8
+    0.04, 0.04;     % Ellipse 9
+    0.04, 0.04;     % Ellipse 10 
 ];
 
 % Define the signal intensities of the ellipses
-signal_intensities = [1, -0.8, -0.1, -0.1, 0.15, 0.5, 0.5, .45];
+signal_intensities = [1, -0.8, -0.1, -0.1, 0.15, 0.5, 0.5, .45, .45, .45];
 
 % Call the modified_phantom function to generate the phantom
 phantom_image = modified_phantom(N, M, center_positions, rotation_angles, sizes, signal_intensities);
